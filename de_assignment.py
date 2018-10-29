@@ -119,6 +119,9 @@ const = calculate_const(x0, y0)
 # compute asymptote
 asymptote = calculate_asymptote(const)
 
+print("Feasible region: x ∈ R \ {" + str(asymptote) + "}")
+print("Const = " + str (const))
+
 for i in range(1, n):
     # in all x points except those are asymptotes
     if x[i] != asymptote:
@@ -133,8 +136,7 @@ for i in range(1, n):
     error_2[i] = y_e[i] - y_2[i]
     error_3[i] = y_e[i] - y_3[i]
 
-print(asymptote)
-print(const)
+
 # plot Analytical Solution
 axes = plt.gca()
 if asymptote < xf:
